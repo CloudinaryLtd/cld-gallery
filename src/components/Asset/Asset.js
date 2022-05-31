@@ -1,7 +1,8 @@
 import { h } from 'preact';
-import { Image } from "./Image/Image";
 import { StyleLessButton } from "../StyleLessButton/StyleLessButton";
 import "./Asset.styles.scss";
+import Image from "../Image";
+import Video from "../Video";
 
 export const Asset = ({ type,asset }) => {
 
