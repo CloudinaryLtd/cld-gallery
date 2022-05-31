@@ -1,6 +1,7 @@
 import { h } from 'preact';
 import { Image } from "./Image/Image";
 import { StyleLessButton } from "../StyleLessButton/StyleLessButton";
+import "./Asset.styles.scss";
 
 export const Asset = ({ type,asset }) => {
 
@@ -18,8 +19,12 @@ export const Asset = ({ type,asset }) => {
   };
 
   return (
-    <StyleLessButton>
+    <StyleLessButton className="asset">
       {getAssetByType()}
     </StyleLessButton>
   );
 };
+
+
+
+
