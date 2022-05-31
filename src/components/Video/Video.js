@@ -2,10 +2,10 @@ import { h } from 'preact';
 
 import "./Video.styles.scss";
 
-const Video = props => {
+const Video = ({ asset }) => {
   return (
     <div className="video">
-      <h1>CLD-GALLERY Video COMPONENT</h1>
+      <video src={asset.source} controls/>
     </div>
   );
 };

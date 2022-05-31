@@ -1,5 +1,5 @@
 import {h, createContext } from 'preact';
-import { useContext, useEffect, useMemo } from 'preact/compat';
+import { useContext, useEffect, useMemo, useState } from 'preact/compat';
 
 const configContext = createContext(undefined);
 export const ConfigContextProvider = configContext.Provider;
@@ -15,9 +15,15 @@ export const useConfigContext = () => {
 };
 
 export const ConfigContextConnected = ({ config, children }) => {
+  const [assets, setAssets] = useState();
+
+  useEffect(() => {
+    // prepareMediaAssets().then(setAssets);
+  });
 
   const value = useMemo(
     () => ({
+      assets,
       config
     }),
     [config]
