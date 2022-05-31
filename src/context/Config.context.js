@@ -8,7 +8,7 @@ export const useConfigContext = () => {
   const value = useContext(configContext);
 
   if (!value) {
-    throw new Error('You need to wrap your component with AppContextConnected');
+    throw new Error('You need to wrap your component with ConfigContextConnected');
   }
 
   return value;
