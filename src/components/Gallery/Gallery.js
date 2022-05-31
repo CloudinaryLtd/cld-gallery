@@ -1,12 +1,14 @@
 import { h } from 'preact';
 import './Gallery.scss';
-import { ConfigContextConnected } from '../../context/Config.context';
+import { useConfigContext } from "../../context/Config.context";
 
-const Gallery = ({ config }) => {
+const Gallery = () => {
+  const {config} = useConfigContext();
+  console.log(config);
+
+
   return (
-    <ConfigContextConnected config={config}>
-      <h1>CLD-GALLERYvvvv</h1>
-    </ConfigContextConnected>
+    <h1>CLD-GALLERYvvvv</h1>
   );
 };
 

@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import Gallery from './components/Gallery';
+import App from './components/App';
 import { render } from 'preact';
 import { getElement } from './utils/dom';
 
@@ -8,7 +8,7 @@ function GalleryWidget(config) {
   const element = getElement(config.container);
 
   function renderApp(){
-    render(<Gallery config={config}/>, element);
+    render(<App config={config}/>, element);
   }
 
   return {

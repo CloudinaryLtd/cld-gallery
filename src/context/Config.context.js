@@ -1,5 +1,5 @@
 import {h, createContext } from 'preact';
-import { useContext, useMemo } from 'preact/compat';
+import { useContext, useEffect, useMemo } from 'preact/compat';
 
 const configContext = createContext(undefined);
 export const ConfigContextProvider = configContext.Provider;
