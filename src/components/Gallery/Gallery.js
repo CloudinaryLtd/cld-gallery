@@ -2,7 +2,7 @@ import { h } from 'preact';
 
 import "./Gallery.scss";
 
-const Gallery = props => {
+const Gallery = (props) => {
   return <h1>CLD-GALLERYvvvv</h1>;
 };
 
