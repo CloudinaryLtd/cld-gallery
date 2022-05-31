@@ -10,6 +10,7 @@ const <%= Name %> = props => {
     <div className="<%=h.inflection.transform(name, ['underscore', 'dasherize']) %>">
       <h1>CLD-GALLERY <%= Name %> COMPONENT</h1>
     </div>
+  );
 };
 
 export default <%= Name %>;
