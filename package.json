@@ -6,6 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=development MODE=widget SECURE=true webpack-dev-server --port 4000",
     "build": "NODE_ENV=production MODE=widget webpack",
+    "analyze": "ANALYSIS=true yarn build",
     "test": "jest",
     "format": "eslint --fix --ext .jsx,.js ./src"
   },
@@ -29,6 +30,7 @@
     "@babel/plugin-transform-react-jsx": "^7.17.12",
     "@cld/webpack-config": "^1.5.34",
     "@prefresh/webpack": "^3.3.3",
+    "mini-css-extract-plugin": "^2.6.0",
     "sass": "^1.52.1",
     "sass-loader": "^13.0.0",
     "style-loader": "^3.3.1",

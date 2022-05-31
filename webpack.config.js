@@ -4,6 +4,7 @@ const { merge } = require('webpack-merge');
 const { appConfig: config, utils } = require('@cld/webpack-config');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PreactRefreshPlugin = require('@prefresh/webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const dirApp = path.join(__dirname, 'src');
 
@@ -38,14 +39,18 @@ utils.removePlugin(config, 'HtmlWebpackPlugin');
 // We will use prefresh for hot reload
 utils.removePlugin(config, 'ReactRefreshWebpackPlugin');
 
+// Hot reload
+config.plugins.push(new webpack.HotModuleReplacementPlugin(), new PreactRefreshPlugin());
+
 config.plugins.push(
   new webpack.BannerPlugin({
     banner: `Cloudinary --> Product Gallery Widget \nbuild: ${getBuildVersion()}\n**/`
   })
 );
 
-// Hot reload
-config.plugins.push(new webpack.HotModuleReplacementPlugin(), new PreactRefreshPlugin());
+config.plugins.push(
+  new MiniCssExtractPlugin()
+);
 
 config.plugins.push(
   new CopyWebpackPlugin({ patterns: [{ from: './public/index.html', to: './index.html' }] })
@@ -78,11 +83,12 @@ module.exports = merge(config, {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          "style-loader",
-          "css-loader",
-          "sass-loader",
-        ],
-      },
+          // fallback to style-loader in development
+          process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader'
+        ]
+      }
     ]
   },
   optimization: {
