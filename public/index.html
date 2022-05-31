@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>PGW Test Page</title>
+
+    <script
+      src="https://polyfill.io/v3/polyfill.min.js?features=default%2Cfetch%2CArray.prototype.includes%2CObject.values%2CArray.prototype.find%2CNumber.isInteger"
+      type="text/javascript"
+    ></script>
+
+    <script type="text/javascript" src="./all.js"></script>
+  </head>
+
+  <body style="margin: 0; text-align: center;">
+    <h1>Cloudinary Product Gallery</h1>
+
+    <div id="my-gallery" style="max-width: 94%; width: 500px; display: inline-block;"></div>
+
+    <script>
+
+      const options = {
+        cloudName: 'demo',
+        id: 'myWidget',
+        container: '#my-gallery',
+        // logErrors: true,
+        // preload: [],
+        // placeholderImage: true,
+        // analytics: true,
+        // transition: 'slide',
+        // carouselLocation: 'bottom',
+        transformation: {},
+        mediaAssets: [
+          {
+            publicId: 'elephants',
+            mediaType: 'video'
+          },
+          {
+            publicId: 'dog',
+            mediaType: 'image'
+          },
+          // {
+          //   tag: 'shoes_product_gallery_demo_spinset',
+          //   mediaType: 'spin'
+          // },
+          // { publicId: 'DamagedHelmet3D', mediaType: '3d' },
+          // {
+          //   tag: 'shoes_product_gallery_demo'
+          // }
+        ],
+
+        // zoom: false,
+
+        zoomProps: {
+          type: 'popup',
+          level: 1.5,
+          steps: 3,
+          stepLimit: true
+          // showTip: 'desktop',
+          // showLens: true,
+          // viewerPosition: 'bottom',
+          // viewerRadius: 10,
+          // lensRadius: 10,
+          // trigger: 'click'
+          // container: '#zoom-target',
+        },
+
+        // skin: 'adidas',
+        // transformation: {
+        //   crop: 'limit',
+        //   effect: 'cartoonify',
+        //   angle: 90,
+        //   background: 'purple',
+        // },
+
+        // transition: 'slide',
+        // aspectRatio: '1:1',
+        // carouselLocation: 'right',
+        // themeProps: {
+        //   primary: '#7e4adc',
+        //   active: '#de1414',
+        //   onPrimary: '#12e680'
+        // },
+
+        // carouselStyle: 'indicators',
+        // carouselOffset: 20,
+        // indicatorProps: {
+        //   selectedColor: 'green',
+        //   color: 'red',
+        //   shape: 'square',
+        //   size: 30,
+        // },
+
+        // thumbnailProps: {
+        //   navigationColor: 'green',
+        //   width: 100,
+        //   height: 100,
+        //   transformation: {
+        //     effect: 'cartoonify',
+        //     quality: 80,
+        //     format: 'auto'
+        //   },
+        //   borderColor: 'green',
+        //   borderWidth: 2,
+        //   navigationColor: 'red',
+        //   navigationIconColor: 'yellow',
+        //   mediaSymbolBgShape: 'none',
+        //   mediaSymbolBgColor: 'red',
+        //   mediaSymbolIconColor: 'yellow',
+        //   mediaSymbolPosition: 'top-left',
+        //   mediaSymbolSize: 16,
+        //   selectedBorderColor: 'red',
+        //   selectedBorderWidth: 10,
+        //   selectedGradientStart: 'red',
+        //   selectedGradientEnd: 'blue',
+        //   selectedGradientDirection: 'vertical',
+        //   selectedStyle: 'all'
+        // },
+
+        // spinProps: {
+        //   showTip: 'all',
+        // },
+
+        // navigation: 'mouseover',
+        // navigationShape: 'diamond',
+        // imageBreakpoint: 100,
+        // viewportBreakpoints: [],
+        // carouselLocation: 'bottom',
+        // carouselStyle: 'thumbnails',
+
+        videoProps: {
+          controls: 'all'
+          // autoplay: false,
+          // playerType: 'cloudinary'
+        }
+
+        // debug: 'true',
+      };
+
+      // const myWidget = cloudinary.galleryWidget(options);
+
+      // myWidget.render();
+    </script>
+  </body>
+</html>

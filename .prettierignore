@@ -1,0 +1,10 @@
+node_modules/*
+yarn-error.log
+.history/*
+.vscode
+public/src
+*.d.ts
+dist
+.DS_Store
+.env
+.idea
