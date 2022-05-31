@@ -1,13 +1,14 @@
 import { h } from 'preact';
-import { StyleLessButton } from "../StyleLessButton/StyleLessButton";
-import "./Asset.styles.scss";
-import Image from "../Image";
-import Video from "../Video";
+import { StyleLessButton } from '../StyleLessButton/StyleLessButton';
+import './Asset.styles.scss';
+import Image from '../Image';
+import Video from '../Video';
+import { ASSET_TYPE } from '../../const';
 
-export const Asset = ({ type,asset }) => {
+export const Asset = ({ asset, onClick }) => {
 
   const getAssetByType = () => {
-    switch (type) {
+    switch (asset.mediaType) {
       case ASSET_TYPE.IMAGE:
         return <Image asset={asset} />
       case ASSET_TYPE.VIDEO:
@@ -20,7 +21,7 @@ export const Asset = ({ type,asset }) => {
   };
 
   return (
-    <StyleLessButton className="asset">
+    <StyleLessButton className='asset' onClick={onClick}>
       {getAssetByType()}
     </StyleLessButton>
   );

@@ -1,6 +1,4 @@
-import styled from 'react-emotion';
+import { h } from 'preact';
+import './StyleLessButton.styles.scss';
 
-export const StyleLessButton = styled('button')`
-  border: none;
-  outline: none;
-`
+export const StyleLessButton = ({children, ...rest}) => <button  {...rest} className="styleLessButton">{children}</button>

@@ -1,6 +1,5 @@
 import { h } from 'preact';
-
-import "./Image.styles.scss";
+import './Image.styles.scss';
 
 const Image = props => {
   return (
